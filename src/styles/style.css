@@ -15,13 +15,13 @@ div.title {
   color: rgb(240, 240, 240);
 }
 
-main {
+div#app main {
   display: flex;
   width: 100%;
   min-height: 90vh;
 }
 
-form {
+main form {
   width: 100%;
   height: 100%;
   display: flex;
@@ -66,8 +66,8 @@ div.personReport label {
 }
 div.personReport input,
 div.carInformations input,
-select,
-textarea {
+div.carInformations select,
+div.carInformations textarea {
   box-sizing: border-box;
   width: 70%;
   padding: 4px 10px;
@@ -79,16 +79,16 @@ textarea {
 
 div.personReport input:focus,
 div.carInformations input:focus,
-select:focus,
-textarea:focus {
+div.carInformations select:focus,
+div.carInformations textarea:focus {
   border: 2px solid rgb(240, 240, 240);
 }
 
-textarea {
+div.carInformations textarea {
   margin: 10px 10px;
 }
 
-button {
+main form button {
   position: relative;
   margin: 20px 0 50px 0;
   width: 20%;
@@ -100,7 +100,7 @@ button {
   overflow: hidden;
 }
 
-button::after {
+main form button::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -111,17 +111,17 @@ button::after {
   transition: 0.2s;
 }
 
-button:hover {
+main form button:hover {
   background-color: rgba(0, 0, 0, 0.2);
 }
-button:hover::after {
+main form button:hover::after {
   left: 0;
 }
 
-div.personReport input.active,
-div.carInformations input.active,
-select.active,
-textarea.active {
+main div.personReport input.active,
+main div.carInformations input.active,
+main div.carInformations select.active,
+main div.carInformations textarea.active {
   background-color: rgba(180, 0, 0, 0.3);
   color: rgb(240, 240, 240);
 }

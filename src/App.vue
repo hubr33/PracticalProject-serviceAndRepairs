@@ -3,8 +3,8 @@
     <div class="title">
       <h2>Zgłoszenie naprawy / serwisu auta</h2>
     </div>
-    <main>
-      <form @submit.prevent="saveData">
+    <main class="service">
+      <form>
         <div class="personReport">
           <label for="name">Imię zgłaszającego</label>
           <input
@@ -77,7 +77,9 @@
             v-model="serviceDescription"
           ></textarea>
         </div>
-        <button>Wyślij zgłoszenie</button>
+        <button class="sendServiceReport" @click="save">
+          Wyślij zgłoszenie
+        </button>
       </form>
     </main>
   </div>
@@ -100,6 +102,22 @@ export default {
     };
   },
   methods: {
+    save() {
+      let CarRepairAndService = {
+        serviceName: this.serviceName,
+        serviceSurname: this.serviceSurname,
+        serviceBrand: this.serviceBrand,
+        serviceModel: this.serviceModel,
+        serviceProductionYear: this.serviceProductionYear,
+        serviceFuel: this.serviceFuel,
+        serviceVin: this.serviceVin,
+        serviceMiles: this.serviceMiles,
+        servicePlate: this.servicePlate,
+        serviceDescription: this.serviceDescription,
+      };
+      this.coachViewContext.binding.set("value", CarRepairAndService);
+      this.coachViewContext.trigger();
+    },
     saveData() {
       const allInputs = document.querySelectorAll("input");
       const select = document.querySelector("select");
