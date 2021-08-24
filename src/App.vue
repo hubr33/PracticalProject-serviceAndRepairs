@@ -4,7 +4,7 @@
       <h2>Zgłoszenie naprawy / serwisu auta</h2>
     </div>
     <main class="service">
-      <form>
+      <form @submit.prevent="saveData">
         <div class="personReport">
           <label for="name">Imię zgłaszającego</label>
           <input
@@ -77,7 +77,7 @@
             v-model="serviceDescription"
           ></textarea>
         </div>
-        <button class="sendServiceReport" @click="save">
+        <button class="sendServiceReport">
           Wyślij zgłoszenie
         </button>
       </form>
@@ -134,6 +134,7 @@ export default {
         this.servicePlate !== "" &&
         this.serviceDescription !== ""
       ) {
+        this.save();
         (this.serviceName = ""),
           (this.serviceSurname = ""),
           (this.serviceBrand = ""),
