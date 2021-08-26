@@ -104,6 +104,7 @@ export default {
   methods: {
     save() {
       let CarRepairAndService = {
+        caseType: "service",
         serviceName: this.serviceName,
         serviceSurname: this.serviceSurname,
         serviceBrand: this.serviceBrand,
